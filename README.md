@@ -1,2 +1,3 @@
-# webstudio-klinika-professionalnoy-stomatologii--2f545255
-Web Studio landing for «Клиника Профессиональной Стоматологии»
+# Welcome to your Lovable project
+
+TODO: Document your project here
