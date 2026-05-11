@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 205 56% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 205 56% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 205 56% 10%;
+
+    --primary: 180 83% 30%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 180 60% 95%;
+
+    --secondary: 210 30% 94%;
+    --secondary-foreground: 205 56% 10%;
+
+    --muted: 210 30% 94%;
+    --muted-foreground: 210 15% 40%;
+
+    --accent: 36 100% 64%;
+    --accent-foreground: 205 56% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 25% 88%;
+    --input: 210 25% 88%;
+    --ring: 180 83% 30%;
+
+    --radius: 0.875rem;
+
+    --shadow-soft: 0 6px 24px -10px hsl(180 60% 20% / 0.15);
+    --shadow-card: 0 2px 12px -4px hsl(205 40% 15% / 0.08);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { font-family: 'Inter', system-ui, sans-serif; }
+  body { @apply bg-background text-foreground antialiased; }
+  h1, h2, h3, h4 { font-family: 'Manrope', system-ui, sans-serif; letter-spacing: -0.02em; }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Manrope', system-ui, sans-serif; }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+}
+
+/* Tooth pulse animation */
+@keyframes tooth-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+}
+@keyframes ring-grow {
+  0% { r: 30; opacity: 0.7; }
+  100% { r: 70; opacity: 0; }
+}
+@keyframes dash-flow {
+  to { stroke-dashoffset: -40; }
+}
+.animate-tooth { animation: tooth-pulse 3s ease-in-out infinite; transform-origin: center; }
+.animate-ring { animation: ring-grow 2.4s ease-out infinite; }
+.animate-ring-2 { animation: ring-grow 2.4s ease-out infinite; animation-delay: 1.2s; }
+.animate-dash { stroke-dasharray: 6 6; animation: dash-flow 2s linear infinite; }
